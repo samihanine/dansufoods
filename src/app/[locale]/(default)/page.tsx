@@ -9,6 +9,7 @@ export default async function HomePage() {
   return (
     <>
       <HomeHero />
+      <div className="mb-20" />
       <ProductsGrid />
       <Advantages />
       <Features />

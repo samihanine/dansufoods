@@ -9,7 +9,7 @@ export default {
   },
   footer: {
     description:
-      "Démarrer votre entreprise avec simplicité et confiance grâce à Dansu Foods. Notre offre comprend les plans d'affaires , la recherche de financement et la mise en marché.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     terms: "Termes et conditions",
     privacy: "Politique de confidentialité",
     cookies: "Politique de cookies",
@@ -28,8 +28,7 @@ export default {
     },
     meta: {
       title: "Accueil - Dansu Foods",
-      description:
-        "Démarrer votre entreprise avec simplicité et confiance grâce à Dansu Foods. Notre offre comprend les plans d'affaires , la recherche de financement et la mise en marché.",
+      description: "Dansu Foods",
       keywords:
         "Processus d'affaires, Gestion d'entreprise, Système ERP, Politique, LEAN, Six Sigma, SAP, Netsuite, Implémentation de système, Stratégie, PME, START UP, Innovation organisationelle, Procédures, Pratique d'affaires, Optimisation d'entreprise, Optimisation d'affaires et Système d'information intégré",
     },

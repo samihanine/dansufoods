@@ -9,7 +9,7 @@ export default {
   },
   footer: {
     description:
-      "Start your business with simplicity and confidence with Dansu Foods. Our offering includes business plans, funding research, and marketing.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     terms: "Terms and Conditions",
     privacy: "Privacy Policy",
     cookies: "Cookie Policy",
@@ -28,8 +28,7 @@ export default {
     },
     meta: {
       title: "Home - Dansu Foods",
-      description:
-        "Start your business with simplicity and confidence with Dansu Foods. Our offering includes business plans, funding research, and marketing.",
+      description: "Dansu Foods",
       keywords:
         "Business processes, Business management, ERP system, Policy, LEAN, Six Sigma, SAP, Netsuite, System implementation, Strategy, SMEs, START UP, Organizational innovation, Procedures, Business practice, Business optimization, Integrated information system",
     },

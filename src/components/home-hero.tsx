@@ -20,7 +20,7 @@ export const HomeHero: React.FC = () => {
               <Image
                 src={FoodImage}
                 alt="Hero"
-                className="w-full max-w-[45vw] h-auto"
+                className="max-w-[650px] w-[45vw] h-auto"
                 priority
               />
             </div>
@@ -39,7 +39,7 @@ export const HomeHero: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-full sm:h-screen">
+      <div className="w-full">
         <Container className="flex flex-col gap-6 pt-20">
           <Typography
             variant="h1"

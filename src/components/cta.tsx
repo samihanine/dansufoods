@@ -4,10 +4,10 @@ import { useIsMobile } from "@/hooks/use-is-mobile";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./button";
-import CtaOneImage from "/public/images/cta-1.png";
+import CtaOneImage from "/public/images/cta-1.jpg";
 import CtaTwoImage from "/public/images/cta-2.png";
-import CtaThreeImage from "/public/images/cta-3.png";
-import CtaFiveImage from "/public/images/cta-5.png";
+import CtaThreeImage from "/public/images/cta-3.jpg";
+import CtaFiveImage from "/public/images/cta-4.jpg";
 import { Typography } from "./typography";
 
 export const Cta = () => {
