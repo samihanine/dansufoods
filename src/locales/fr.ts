@@ -1,4 +1,3 @@
-// locales/fr.ts
 export default {
   navigation: {
     about: "À propos",
