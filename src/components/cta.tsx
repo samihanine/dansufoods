@@ -52,7 +52,7 @@ export const Cta = () => {
             <Typography variant="h2" className="text-center">
               {t("title")}
             </Typography>
-            <Link href="/">
+            <Link href="/contact">
               <Button size="lg" className="w-fit">
                 {t("button")}
               </Button>

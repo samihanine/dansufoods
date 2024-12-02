@@ -8,6 +8,7 @@ import Image from "next/image";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { useScopedI18n } from "@/locales/client";
+import Link from "next/link";
 
 export const Vision = () => {
   const isMobile = useIsMobile();
@@ -56,9 +57,11 @@ export const Vision = () => {
             dangerouslySetInnerHTML={{ __html: t("vision.description") }}
           />
 
-          <Button variant={"secondary"} size="lg" className="mt-8 w-fit">
-            {t("vision.button")}
-          </Button>
+          <Link href="/contact">
+            <Button variant={"secondary"} size="lg" className="mt-8 w-fit">
+              {t("vision.button")}
+            </Button>
+          </Link>
         </div>
       </Container>
     </div>

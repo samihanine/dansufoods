@@ -8,6 +8,7 @@ import { Button } from "./button";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { Typography } from "./typography";
 import { useScopedI18n } from "@/locales/client";
+import Link from "next/link";
 
 export const HomeHero: React.FC = () => {
   const isMovbile = useIsMobile();
@@ -42,7 +43,7 @@ export const HomeHero: React.FC = () => {
         </div>
       </div>
       <div className="w-full">
-        <Container className="flex flex-col gap-6 pt-20">
+        <Container className="flex flex-col gap-6 pt-20 relative z-[1000]">
           <Typography
             variant="h1"
             className="sm:text-8xl w-full max-w-xl font-medium"
@@ -52,10 +53,14 @@ export const HomeHero: React.FC = () => {
           <p className="text-lg w-full max-w-xl">{t("hero.subtitle")}</p>
 
           <div className="flex gap-5">
-            <Button size={"lg"}>{t("hero.primarybutton")}</Button>
-            <Button size={"lg"} variant={"outline"}>
-              {t("hero.secondarybutton")}
-            </Button>
+            <Link href="/products">
+              <Button size={"lg"}>{t("hero.primarybutton")}</Button>
+            </Link>
+            <Link href="/about">
+              <Button size={"lg"} variant={"outline"}>
+                {t("hero.secondarybutton")}
+              </Button>
+            </Link>
           </div>
         </Container>
       </div>
