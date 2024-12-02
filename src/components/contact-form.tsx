@@ -17,6 +17,7 @@ import { Input } from "./input";
 import { Textarea } from "./textarea";
 import { Container } from "./container";
 import { Typography } from "./typography";
+import { useScopedI18n } from "@/locales/client";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -34,6 +35,7 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
+  const t = useScopedI18n("contact");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,12 +56,10 @@ export default function ContactForm() {
       <Container className="relative">
         <div className="text-center space-y-2 mb-12">
           <Typography variant="h1" className="text-center">
-            Contact Us
+            {t("contactTitle")}
           </Typography>
           <Typography variant="paragraph" className="text-center mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <br />
-            Varius sed pharetra dictum neque massa.
+            {t("contactDescription")}
           </Typography>
         </div>
         <div className="border-zinc-300/10 rounded-2xl border-[16px] w-full max-w-2xl mx-auto">
@@ -74,9 +74,9 @@ export default function ContactForm() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name*</FormLabel>
+                      <FormLabel>{t("labelName")}</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your name" {...field} />
+                        <Input placeholder={t("placeholderName")} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -87,9 +87,9 @@ export default function ContactForm() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email*</FormLabel>
+                      <FormLabel>{t("labelEmail")}</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your email" {...field} />
+                        <Input placeholder={t("placeholderEmail")} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -100,9 +100,12 @@ export default function ContactForm() {
                   name="subject"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Subject*</FormLabel>
+                      <FormLabel>{t("labelSubject")}</FormLabel>
                       <FormControl>
-                        <Input placeholder="Message subject" {...field} />
+                        <Input
+                          placeholder={t("placeholderSubject")}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -113,10 +116,10 @@ export default function ContactForm() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message*</FormLabel>
+                      <FormLabel>{t("labelMessage")}</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Your message"
+                          placeholder={t("placeholderMessage")}
                           className="min-h-[100px] resize-none"
                           {...field}
                         />
@@ -127,7 +130,7 @@ export default function ContactForm() {
                 />
 
                 <Button size={"lg"} type="submit" className="w-full mt-8">
-                  Send Message
+                  {t("button")}
                 </Button>
               </form>
             </Form>

@@ -58,11 +58,11 @@ export async function Footer({
             <p className="text-md font-semibold text-white">Contact Us</p>
 
             <div className="flex flex-col mt-4 space-y-3 text-white text-sm">
-              <a href="mailto:contact@dansufoods.com">contact@dansufoods.com</a>
+              <a href="mailto:info@dansufoods.com">info@dansufoods.com</a>
 
-              <a href="tel:+225 07 07 07 07">+225 07 07 07 07</a>
+              <a href="tel:+1514-746-7877">+1 514-746-7877</a>
 
-              <p>123 Lorem ipsum address </p>
+              <p>810-5498 rue Hochelaga Montréal Quebec H1N 3L7 Canada</p>
             </div>
           </div>
 

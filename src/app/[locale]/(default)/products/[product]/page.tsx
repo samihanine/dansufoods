@@ -1,6 +1,6 @@
+import { Advantages } from "@/components/advantages";
 import { Cta } from "@/components/cta";
 import { ProductDetails } from "@/components/product-details";
-import Qualities from "@/components/qualities";
 import { getProductBySlug } from "@/data/products";
 import { notFound } from "next/navigation";
 
@@ -19,7 +19,7 @@ export default async function Page({
   return (
     <>
       <ProductDetails product={product} />
-      <Qualities />
+      <Advantages />
       <Cta />
     </>
   );

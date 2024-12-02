@@ -9,9 +9,11 @@ import CtaTwoImage from "/public/images/cta-2.png";
 import CtaThreeImage from "/public/images/cta-3.jpg";
 import CtaFiveImage from "/public/images/cta-4.jpg";
 import { Typography } from "./typography";
+import { useScopedI18n } from "@/locales/client";
 
 export const Cta = () => {
   const isMobile = useIsMobile();
+  const t = useScopedI18n("callToAction");
   return (
     <div className="bg-[#FFFBEF] py-28">
       <div className="coverer mx-auto">
@@ -48,11 +50,11 @@ export const Cta = () => {
 
           <div className="flex flex-col items-center justify-center space-y-6 p-8">
             <Typography variant="h2" className="text-center">
-              Lorem ipsum dolor est atum proibid
+              {t("title")}
             </Typography>
             <Link href="/">
               <Button size="lg" className="w-fit">
-                Lorem ipsum est
+                {t("button")}
               </Button>
             </Link>
           </div>

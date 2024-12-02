@@ -1,6 +1,6 @@
 import AboutTitle from "@/components/about-title";
 import { Cta } from "@/components/cta";
-import Qualities from "@/components/qualities";
+import { Features } from "@/components/features";
 import { Statistics } from "@/components/statistics";
 import { Story } from "@/components/story";
 import { Team } from "@/components/team";
@@ -14,9 +14,9 @@ export default function AboutPage() {
     <>
       <Story />
       <AboutTitle />
-      <Qualities />
-      <Statistics />
       <Team />
+      <Statistics />
+      <Features />
       <Cta />
     </>
   );

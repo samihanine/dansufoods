@@ -2,6 +2,10 @@ import { StaticImageData } from "next/image";
 import ProductOneImage from "/public/images/product-1.png";
 import ProductTwoImage from "/public/images/product-2.png";
 import ProductThreeImage from "/public/images/product-3.png";
+import ExtraFrimImage from "/public/images/extra-firm.png";
+import FirmImage from "/public/images/firm.png";
+import PressedTofu from "/public/images/pressed-tofu.png";
+import { getScopedI18n } from "@/locales/server";
 
 export type Product = {
   shortDescription: string;
@@ -13,46 +17,50 @@ export type Product = {
   slug: string;
 };
 
-export const products: Product[] = [
-  {
-    shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    title: "Product 1",
-    subtitle: "Subtitle 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis et nun.",
-    images: [ProductOneImage, ProductTwoImage, ProductThreeImage],
-    tags: ["Tag 1", "Tag 2", "Tag 3"],
-    slug: "product-1",
-  },
-  {
-    shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    title: "Product 2",
-    subtitle: "Subtitle 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis et nun.",
-    images: [ProductOneImage, ProductTwoImage, ProductThreeImage],
-    tags: ["Tag 1", "Tag 2", "Tag 3"],
-    slug: "product-2",
-  },
-  {
-    shortDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    title: "Product 3",
-    subtitle: "Subtitle 3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis et nun.",
-    images: [ProductOneImage, ProductTwoImage, ProductThreeImage],
-    tags: ["Tag 1", "Tag 2", "Tag 3"],
-    slug: "product-3",
-  },
-];
-
 export const getProducts = async () => {
+  const t = await getScopedI18n("home.products");
+  const products: Product[] = [
+    {
+      shortDescription: t("product1.shortDescription"),
+      title: t("product1.title"),
+      subtitle: t("product1.subtitle"),
+      description: t("product1.description"),
+      images: [PressedTofu],
+      tags: t("product1.tags").split(","),
+      slug: t("product1.slug"),
+    },
+    {
+      shortDescription: t("product2.shortDescription"),
+      title: t("product2.title"),
+      subtitle: t("product2.subtitle"),
+      description: t("product2.description"),
+      images: [ProductTwoImage, ProductThreeImage, FirmImage],
+      tags: t("product2.tags").split(","),
+      slug: t("product2.slug"),
+    },
+    {
+      shortDescription: t("product3.shortDescription"),
+      title: t("product3.title"),
+      subtitle: t("product3.subtitle"),
+      description: t("product3.description"),
+      images: [ExtraFrimImage],
+      tags: t("product3.tags").split(","),
+      slug: t("product3.slug"),
+    },
+    {
+      shortDescription: t("product4.shortDescription"),
+      title: t("product4.title"),
+      subtitle: t("product4.subtitle"),
+      description: t("product4.description"),
+      images: [ProductOneImage],
+      tags: t("product4.tags").split(","),
+      slug: t("product4.slug"),
+    },
+  ];
+
   return products;
 };
 
 export const getProductBySlug = async (slug: string) => {
-  return products.find((product) => product.slug === slug);
+  return (await getProducts()).find((product) => product.slug === slug);
 };

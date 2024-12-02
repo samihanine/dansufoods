@@ -1,25 +1,28 @@
+import { getScopedI18n } from "@/locales/server";
 import { Container } from "./container";
 import { Typography } from "./typography";
 import StatisticsImage from "/public/images/statistics.png";
 import Image from "next/image";
 
-export const Statistics = () => {
+export const Statistics = async () => {
+  const t = await getScopedI18n("about");
+
   const statistics = [
     {
-      title: "Lorem ipsum dolor sit amet",
-      value: "3",
+      title: t("stats.statOneDescription"),
+      value: t("stats.statOneNumber"),
     },
     {
-      title: "Lorem ipsum dolor sit amet",
-      value: "100",
+      title: t("stats.statTwoDescription"),
+      value: t("stats.statTwoNumber"),
     },
     {
-      title: "Lorem ipsum dolor sit amet",
-      value: "8%",
+      title: t("stats.statThreeDescription"),
+      value: t("stats.statThreeNumber"),
     },
     {
-      title: "Lorem ipsum dolor sit amet",
-      value: "10",
+      title: t("stats.statFourDescription"),
+      value: t("stats.statFourNumber"),
     },
   ];
 
@@ -29,11 +32,10 @@ export const Statistics = () => {
         <div className="flex-1">
           <div className="max-w-md">
             <Typography variant="h2" className="mb-4">
-              Lorem ipsum dolor sit amet. Vel error autem
+              {t("stats.title")}
             </Typography>
             <Typography variant="paragraph" className="mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {t("stats.description")}
             </Typography>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

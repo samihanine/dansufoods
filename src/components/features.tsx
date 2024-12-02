@@ -1,31 +1,30 @@
 import { Leaf } from "lucide-react";
 import { Container } from "./container";
 import { Typography } from "./typography";
+import { getScopedI18n } from "@/locales/server";
 
-export const Features = () => {
+export const Features = async () => {
+  const t = await getScopedI18n("home");
+
   const features = [
     {
-      title: "Lorem ipsum",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: t("features.featureTitle1"),
+      description: t("features.featureDescription1"),
       Icon: Leaf,
     },
     {
-      title: "Lorem ipsum",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: t("features.featureTitle2"),
+      description: t("features.featureDescription2"),
       Icon: Leaf,
     },
     {
-      title: "Lorem ipsum",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: t("features.featureTitle3"),
+      description: t("features.featureDescription3"),
       Icon: Leaf,
     },
     {
-      title: "Lorem ipsum",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      title: t("features.featureTitle4"),
+      description: t("features.featureDescription4"),
       Icon: Leaf,
     },
   ];
@@ -33,7 +32,7 @@ export const Features = () => {
   return (
     <Container>
       <Typography variant="h2" className="mb-8 text-center">
-        Lorem ipsum
+        {t("features.title")}
       </Typography>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
@@ -45,7 +44,9 @@ export const Features = () => {
             <div className="rounded-full w-20 h-20 flex justify-center items-center bg-[#F0FAF0]">
               <feature.Icon className="text-tertiary w-10 h-10" />
             </div>
-            <Typography variant="lead">{feature.title}</Typography>
+            <Typography className="text-center" variant="lead">
+              {feature.title}
+            </Typography>
             <Typography variant="small" className="text-center">
               {feature.description}
             </Typography>

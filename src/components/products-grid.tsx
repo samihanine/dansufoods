@@ -4,15 +4,17 @@ import { Typography } from "./typography";
 import ProductImage from "/public/images/home-product.png";
 import { getProducts } from "@/data/products";
 import Link from "next/link";
+import { getScopedI18n } from "@/locales/server";
 
 export const ProductsGrid = async () => {
   const products = await getProducts();
+  const t = await getScopedI18n("home");
 
   return (
     <Container>
       <div className="flex justify-center items-end">
         <Typography variant="h2" className="text-center mb-8">
-          Our products
+          {t("products.title")}
         </Typography>
 
         <div className="relative">
@@ -20,11 +22,10 @@ export const ProductsGrid = async () => {
         </div>
       </div>
       <Typography variant="small" className="text-center max-w-lg mx-auto">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit.
+        {t("products.subtitle")}
       </Typography>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 mt-12">
         {products.map((product) => (
           <Link
             href={"/products/" + product.slug}
@@ -32,7 +33,7 @@ export const ProductsGrid = async () => {
             className="flex flex-col items-center"
           >
             <Image
-              className="w-full h-[400px] object-cover rounded-xl border-[3px] border-primary"
+              className="w-full h-[280px] object-cover rounded-xl border-[3px] border-primary"
               src={product.images[0]}
               alt={product.title}
             />

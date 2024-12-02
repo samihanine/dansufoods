@@ -4,18 +4,20 @@ import { Typography } from "./typography";
 import DanImage from "/public/images/dan.png";
 import PierreImage from "/public/images/pierre.png";
 import { LinkedinIcon } from "./social-icons";
+import { getScopedI18n } from "@/locales/server";
 
-export const Team = () => {
+export const Team = async () => {
+  const t = await getScopedI18n("about");
   const team = [
     {
       name: "Dan Su",
-      role: "CEO & Co-founder",
+      role: t("team.roleMember1"),
       image: DanImage,
       linkedinUrl: "https://www.linkedin.com/in/dansu/",
     },
     {
       name: "Pierre Donaldson",
-      role: "Co-founder",
+      role: t("team.roleMember2"),
       image: PierreImage,
       linkedinUrl: "https://www.linkedin.com/in/dansu/",
     },
@@ -23,15 +25,13 @@ export const Team = () => {
   return (
     <Container className="">
       <Typography variant="h2" className="text-center">
-        Lorem ipsum dolor sit amet
+        {t("team.title")}
       </Typography>
       <Typography
         variant="paragraph"
         className="text-center mt-4 max-w-2xl mx-auto"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit.
+        {t("team.subtitle")}
       </Typography>
 
       <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-10 mt-20">

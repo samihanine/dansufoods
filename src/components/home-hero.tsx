@@ -7,9 +7,11 @@ import CircleImage from "/public/images/home-circle.png";
 import { Button } from "./button";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { Typography } from "./typography";
+import { useScopedI18n } from "@/locales/client";
 
 export const HomeHero: React.FC = () => {
   const isMovbile = useIsMobile();
+  const t = useScopedI18n("home");
 
   return (
     <>
@@ -45,17 +47,14 @@ export const HomeHero: React.FC = () => {
             variant="h1"
             className="sm:text-8xl w-full max-w-xl font-medium"
           >
-            Welcome to Dansu
+            {t("hero.title")}
           </Typography>
-          <p className="text-lg w-full max-w-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            vehicula, libero sit amet placerat placerat.
-          </p>
+          <p className="text-lg w-full max-w-xl">{t("hero.subtitle")}</p>
 
           <div className="flex gap-5">
-            <Button size={"lg"}>Order Now</Button>
+            <Button size={"lg"}>{t("hero.primarybutton")}</Button>
             <Button size={"lg"} variant={"outline"}>
-              Learn More
+              {t("hero.secondarybutton")}
             </Button>
           </div>
         </Container>

@@ -6,19 +6,21 @@ import AdvantageImageThree from "/public/images/advantage-3.png";
 
 import Image from "next/image";
 import { Apple } from "lucide-react";
+import { getScopedI18n } from "@/locales/server";
 
 export const Advantages = async () => {
+  const t = await getScopedI18n("home");
   const advantages = [
     {
-      title: "Lorem ipsum dolor sit amet",
+      title: t("advantages.point1"),
       Icon: Apple,
     },
     {
-      title: "Lorem ipsum dolor sit amet",
+      title: t("advantages.point2"),
       Icon: Apple,
     },
     {
-      title: "Lorem ipsum dolor sit amet",
+      title: t("advantages.point3"),
       Icon: Apple,
     },
   ];
@@ -50,11 +52,10 @@ export const Advantages = async () => {
         </div>
         <div className="flex-1">
           <Typography variant="h2" className="mb-8">
-            Lorem ipsum dolor est
+            {t("advantages.title")}
           </Typography>
           <Typography variant="paragraph" className="">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            {t("advantages.subtitle")}
           </Typography>
 
           <div className="flex flex-col gap-6 mt-8">
