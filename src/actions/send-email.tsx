@@ -65,7 +65,7 @@ export const sendEmail = async (props: {
   });
 
   const result = await resend.emails.send({
-    from: `Drivite <${process.env.RESEND_FROM_EMAIL}>`,
+    from: `Dansu Foods Website <${process.env.RESEND_FROM_EMAIL}>`,
     to: props.to,
     subject: props.subject,
     html,
