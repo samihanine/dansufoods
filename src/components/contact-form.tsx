@@ -18,6 +18,10 @@ import { Textarea } from "./textarea";
 import { Container } from "./container";
 import { Typography } from "./typography";
 import { useScopedI18n } from "@/locales/client";
+import Altcha from "./altcha";
+import sendContactMessage from "@/actions/send-contact-message";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -26,29 +30,45 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  subject: z.string().min(5, {
-    message: "Subject must be at least 5 characters.",
-  }),
+  phone: z.string().optional(),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
 });
 
 export default function ContactForm() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isSuccess, setIsSuccess] = useState<boolean | undefined>(undefined);
   const t = useScopedI18n("contact");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
-      subject: "",
+      phone: "",
       message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Handle form submission
-    console.log(values);
+    if (isLoaded) {
+      return;
+    }
+
+    setIsLoaded(true);
+
+    const result = await sendContactMessage(values);
+
+    if (result.success) {
+      setIsSuccess(true);
+    } else {
+      setIsSuccess(false);
+    }
+
+    setIsLoaded(false);
+
+    form.reset();
   }
 
   return (
@@ -69,12 +89,25 @@ export default function ContactForm() {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="flex flex-col gap-4"
               >
+                {isSuccess !== undefined && (
+                  <div
+                    className={cn(
+                      "p-4 rounded-lg border text-center mb-4",
+                      isSuccess
+                        ? "border-green-600 bg-green-50 text-green-600"
+                        : "border-red-600 bg-red-50 text-red-600"
+                    )}
+                  >
+                    {isSuccess ? t("successMessage") : t("errorMessage")}
+                  </div>
+                )}
+
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t("labelName")}</FormLabel>
+                      <FormLabel>{t("labelName")}*</FormLabel>
                       <FormControl>
                         <Input placeholder={t("placeholderName")} {...field} />
                       </FormControl>
@@ -87,7 +120,7 @@ export default function ContactForm() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t("labelEmail")}</FormLabel>
+                      <FormLabel>{t("labelEmail")}*</FormLabel>
                       <FormControl>
                         <Input placeholder={t("placeholderEmail")} {...field} />
                       </FormControl>
@@ -97,13 +130,14 @@ export default function ContactForm() {
                 />
                 <FormField
                   control={form.control}
-                  name="subject"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t("labelSubject")}</FormLabel>
+                      <FormLabel>{t("labelPhone")}</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder={t("placeholderSubject")}
+                          type="tel"
+                          placeholder={t("placeholderPhone")}
                           {...field}
                         />
                       </FormControl>
@@ -116,7 +150,7 @@ export default function ContactForm() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t("labelMessage")}</FormLabel>
+                      <FormLabel>{t("labelMessage")}*</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder={t("placeholderMessage")}
@@ -128,9 +162,17 @@ export default function ContactForm() {
                     </FormItem>
                   )}
                 />
+                <div className="my-4">
+                  <Altcha />
+                </div>
 
-                <Button size={"lg"} type="submit" className="w-full mt-8">
-                  {t("button")}
+                <Button
+                  size={"lg"}
+                  type="submit"
+                  className="w-full mt-8"
+                  disabled={isLoaded}
+                >
+                  {t("button")} {isLoaded && "…"}
                 </Button>
               </form>
             </Form>

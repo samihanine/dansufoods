@@ -159,13 +159,16 @@ export default {
     placeholderName: "Votre nom",
     labelEmail: "Email",
     placeholderEmail: "Votre email",
-    labelSubject: "Sujet",
-    placeholderSubject: "Sujet de votre message",
+    labelPhone: "Téléphone",
+    placeholderPhone: "Votre numéro de téléphone",
     labelMessage: "Message",
     placeholderMessage: "Votre message",
     button: "Envoyer",
     contactEmail: "Notre adresse email",
     contactPhone: "Notre numéro de téléphone",
     contactLocation: "Notre adresse",
+    successMessage: "Votre message a bien été envoyé.",
+    errorMessage:
+      "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer.",
   },
 } as const;
