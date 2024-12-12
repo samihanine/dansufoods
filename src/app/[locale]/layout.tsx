@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import { I18nProviderClient } from "../../locales/client";
 import { getScopedI18n } from "@/locales/server";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Aos } from "../../../src/components/aos";
+import "aos/dist/aos.css";
 
 export async function generateMetadata({}: {
   params: {
@@ -38,6 +40,7 @@ export default function RootLayout({
         className={`min-h-screen font-inter ${inter.variable} ${baloo.variable}`}
       >
         <I18nProviderClient locale={params.locale}>
+          <Aos />
           {children}
         </I18nProviderClient>
       </body>

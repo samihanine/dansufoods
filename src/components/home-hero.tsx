@@ -43,7 +43,7 @@ export const HomeHero: React.FC = () => {
         </div>
       </div>
       <div className="w-full">
-        <Container className="flex flex-col gap-6 pt-20 relative z-[1000]">
+        <Container className="flex flex-col gap-6 pt-20 relative z-[1000] fade-right">
           <Typography
             variant="h1"
             className="sm:text-8xl w-full max-w-xl font-medium"
