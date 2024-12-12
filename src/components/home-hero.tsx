@@ -52,7 +52,7 @@ export const HomeHero: React.FC = () => {
           </Typography>
           <p className="text-lg w-full max-w-xl">{t("hero.subtitle")}</p>
 
-          <div className="flex gap-5">
+          <div className="flex gap-5 flex-wrap">
             <Link href="/products">
               <Button size={"lg"}>{t("hero.primarybutton")}</Button>
             </Link>

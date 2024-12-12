@@ -39,7 +39,7 @@ export function Header({
     return (
       <Popover>
         <PopoverButton
-          className="group relative z-50 flex cursor-pointer items-center justify-center border border-gray-secondary-400/75 bg-white p-3 transition duration-300 ease-in-out focus:outline-none lg:hidden"
+          className="group z-[6001] relative flex cursor-pointer items-center justify-center border border-gray-secondary-400/75 bg-white p-3 transition duration-300 ease-in-out focus:outline-none lg:hidden"
           aria-label="Toggle Navigation"
         >
           <Hamburger />
@@ -53,7 +53,7 @@ export function Header({
         <PopoverPanel
           as="div"
           transition
-          className="absolute inset-x-0 top-0 z-30 overflow-hidden bg-background px-5 pb-8 pt-24 data-[closed]:scale-90 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
+          className="absolute z-[6000] inset-x-0 top-0 overflow-hidden bg-background px-5 pb-8 pt-24 data-[closed]:scale-90 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
         >
           <div>
             <div className="flex flex-col divide-y divide-gray-secondary-400/75">
