@@ -14,8 +14,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LocaleSwitcher } from "./local-switcher";
-import Image from "next/image";
 import Logo from "./logo";
+
 export function Header({
   links,
 }: {

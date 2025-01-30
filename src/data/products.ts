@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image";
-import ProductOneImage from "/public/images/product-1.png";
 import ProductTwoImage from "/public/images/product-2.png";
 import ProductThreeImage from "/public/images/product-3.png";
 import ExtraFrimImage from "/public/images/extra-firm.png";
