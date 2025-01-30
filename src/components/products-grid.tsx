@@ -25,7 +25,7 @@ export const ProductsGrid = async () => {
         {t("products.subtitle")}
       </Typography>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-12">
         {products.map((product) => (
           <Link
             href={"/products/" + product.slug}
@@ -33,7 +33,7 @@ export const ProductsGrid = async () => {
             className="flex flex-col items-center"
           >
             <Image
-              className="w-full h-[280px] object-cover rounded-xl border-[3px] border-primary"
+              className="w-auto h-[280px] object-contain rounded-xl"
               src={product.images[0]}
               alt={product.title}
             />

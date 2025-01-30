@@ -16,7 +16,7 @@ export const Gallery = ({ images }: { images: StaticImageData[] }) => {
         <Image
           src={images[currentImage]}
           alt="Product 1"
-          className="rounded-xl w-full aspect-square object-cover"
+          className="rounded-xl w-full aspect-square object-contain"
         />
 
         <div className="absolute top-4 right-4">

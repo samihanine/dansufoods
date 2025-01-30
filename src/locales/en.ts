@@ -30,7 +30,7 @@ export default {
         "Canada, Quebec, Montreal, tofu, plant-based food, soy, healthy products, gluten-free, protein, sustainable cooking, firm tofu, extra firm tofu, responsible eating, nutrition, health",
     },
     hero: {
-      title: "The Best Tofu for a Healthy Life",
+      title: "Clean and purely plant-powered soyfoods for a healthy life.",
       subtitle:
         "Discover the best of plant-based nutrition with our premium soy products, crafted with care and sustainability.",
       primarybutton: "Discover Our Products",
@@ -131,7 +131,8 @@ export default {
       subtitle:
         "Discover the passionate individuals behind Dansu Foods, dedicated to bringing superior soy products to your table.",
       roleMember1: "CEO & Co-Founder",
-      roleMember2: "Co-Founder",
+      roleMember2: "Chairman & Co-Founder",
+      roleMember3: "CMO",
     },
     stats: {
       title: "Our Key Figures",

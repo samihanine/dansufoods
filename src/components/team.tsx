@@ -3,9 +3,9 @@ import { Container } from "./container";
 import { Typography } from "./typography";
 import DanImage from "/public/images/dan.png";
 import PierreImage from "/public/images/pierre.png";
-import { LinkedinIcon } from "./social-icons";
+import JenniferImage from "/public/images/jennifer.jpeg";
 import { getScopedI18n } from "@/locales/server";
-
+import { LinkedinIcon } from "./social-icons";
 export const Team = async () => {
   const t = await getScopedI18n("about");
   const team = [
@@ -19,6 +19,12 @@ export const Team = async () => {
       name: "Pierre Donaldson",
       role: t("team.roleMember2"),
       image: PierreImage,
+      linkedinUrl: "https://www.linkedin.com/in/dansu/",
+    },
+    {
+      name: "Jenn Zimmermannn",
+      role: t("team.roleMember3"),
+      image: JenniferImage,
       linkedinUrl: "https://www.linkedin.com/in/dansu/",
     },
   ];
@@ -54,7 +60,7 @@ export const Team = async () => {
               target="_blank"
               rel="noreferrer"
             >
-              <LinkedinIcon className="w-9 h-9" />
+              <LinkedinIcon className="w-8 h-8" />
             </a>
           </div>
         ))}

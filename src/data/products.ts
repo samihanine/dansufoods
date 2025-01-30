@@ -47,6 +47,7 @@ export const getProducts = async () => {
       tags: t("product3.tags").split(","),
       slug: t("product3.slug"),
     },
+    /*
     {
       shortDescription: t("product4.shortDescription"),
       title: t("product4.title"),
@@ -56,6 +57,7 @@ export const getProducts = async () => {
       tags: t("product4.tags").split(","),
       slug: t("product4.slug"),
     },
+    */
   ];
 
   return products;

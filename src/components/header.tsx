@@ -14,7 +14,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LocaleSwitcher } from "./local-switcher";
-
+import Image from "next/image";
+import Logo from "./logo";
 export function Header({
   links,
 }: {
@@ -85,9 +86,7 @@ export function Header({
               className="flex flex-shrink-0 items-center"
               aria-label="Home"
             >
-              <p className="text-4xl font-bold font-baloo text-primary">
-                Dansu
-              </p>
+              <Logo />
             </Link>
             <div className="hidden items-center space-x-3 lg:flex lg:space-x-4">
               {links

@@ -4,6 +4,7 @@ import { Container } from "./container";
 import Image from "next/image";
 import FoodImage from "/public/images/home-hero.png";
 import CircleImage from "/public/images/home-circle.png";
+import AlimentDuQuebecLogo from "/public/images/aliment-du-quebec-logo.png";
 import { Button } from "./button";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { Typography } from "./typography";
@@ -46,13 +47,13 @@ export const HomeHero: React.FC = () => {
         <Container className="flex flex-col gap-6 pt-20 relative z-[1000] fade-right">
           <Typography
             variant="h1"
-            className="sm:text-8xl w-full max-w-xl font-medium"
+            className="sm:text-6xl text-4xl w-full max-w-xl font-medium"
           >
             {t("hero.title")}
           </Typography>
           <p className="text-lg w-full max-w-xl">{t("hero.subtitle")}</p>
 
-          <div className="flex gap-5 flex-wrap">
+          <div className="flex gap-5 flex-wrap items-center">
             <Link href="/products">
               <Button size={"lg"}>{t("hero.primarybutton")}</Button>
             </Link>
@@ -61,6 +62,13 @@ export const HomeHero: React.FC = () => {
                 {t("hero.secondarybutton")}
               </Button>
             </Link>
+
+            <Image
+              src={AlimentDuQuebecLogo}
+              alt="Hero"
+              className="h-auto w-20"
+              priority
+            />
           </div>
         </Container>
       </div>

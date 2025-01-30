@@ -3,6 +3,7 @@ import { getScopedI18n } from "@/locales/server";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 import { FacebookIcon, LinkedinIcon, YoutubeIcon } from "./social-icons";
+import Logo from "./logo";
 
 type SocialLinkProps = LinkProps & {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -28,9 +29,7 @@ export async function Footer({
         <div className="flex flex-col sm:flex-row gap-x-20 gap-y-6">
           <div className="flex-1">
             <Link href="/" className="flex flex-shrink-0" aria-label="Home">
-              <p className="text-4xl font-semibold text-primary font-baloo">
-                Dansu Foods
-              </p>
+              <Logo />
             </Link>
             <p className="mt-10 text-md leading-relaxed text-slate-50 w-full max-w-sm">
               {t("description")}

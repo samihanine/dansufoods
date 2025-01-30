@@ -30,7 +30,8 @@ export default {
         "canada, québec, montréal, tofu, alimentation végétale, soja, produits sains, sans gluten, protéines, cuisine durable, tofu ferme, tofu extra ferme, alimentation responsable, nutrition, santé",
     },
     hero: {
-      title: "Le meilleur Tofu pour une vie saine",
+      title:
+        "Des aliments à base de soja, propres et purement végétaux, pour une vie saine.",
       subtitle:
         "Découvrez le meilleur de la nutrition végétale avec nos produits de soja premium, fabriqués avec soin et durabilité.",
       primarybutton: "Découvrir Nos Produits",
@@ -135,7 +136,8 @@ export default {
       subtitle:
         "Découvrez les personnes passionnées derrière Dansu Foods, dédiées à apporter des produits de soja de qualité supérieure à votre table.",
       roleMember1: "CEO & Co-fondatrice",
-      roleMember2: "Co-fondateur",
+      roleMember2: "Président & Co-fondateur",
+      roleMember3: "Directrice marketing",
     },
     stats: {
       title: "Nos Chiffres Clés",
