@@ -33,15 +33,15 @@ export const Vision = () => {
               <div className="flex flex-col gap-4 mt-4">
                 <Typography variant="small" className="text-white">
                   <PhoneIcon className="w-4 h-4 inline-block mr-2" />
-                  +123 456 789
+                  +1 514-746-7877
                 </Typography>
                 <Typography variant="small" className="text-white">
                   <EnvelopeIcon className="w-4 h-4 inline-block mr-2" />
-                  email@dansu.com
+                  info@dansufoods.com
                 </Typography>
                 <Typography variant="small" className="text-white">
                   <MapPinIcon className="w-4 h-4 inline-block mr-2" />
-                  123 Rue de Montreil, Montréal, H3C 0H7, Canada
+                  810-5498 rue Hochelaga Montréal Quebec H1N 3L7 Canada
                 </Typography>
               </div>
             </div>

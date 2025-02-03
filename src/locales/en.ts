@@ -30,7 +30,7 @@ export default {
         "Canada, Quebec, Montreal, tofu, plant-based food, soy, healthy products, gluten-free, protein, sustainable cooking, firm tofu, extra firm tofu, responsible eating, nutrition, health",
     },
     hero: {
-      title: "Clean and purely plant-powered soyfoods for a healthy life.",
+      title: "Clean and purely plant-powered soy foods for a healthy life.",
       subtitle:
         "Discover the best of plant-based nutrition with our premium soy products, crafted with care and sustainability.",
       primarybutton: "Discover Our Products",
@@ -41,13 +41,13 @@ export default {
       subtitle:
         "Explore our selection of premium tofu designed to elevate your dishes.",
       product1: {
-        shortDescription: "A delicate texture perfect for soups and desserts.",
-        title: "Soft Tofu",
-        subtitle: "Soft and Light Texture",
+        shortDescription: "A solid texture for dishes requiring structure.",
+        title: "Extra Firm Tofu",
+        subtitle: "Robust and Flavorful Texture",
         description:
-          "Our Soft Tofu is crafted to bring a delicate and delicious texture to your soups, desserts, and creative dishes. Made with superior quality ingredients.",
-        tags: "Soup, Dessert, Creative",
-        slug: "soft-tofu",
+          "Our Extra Firm Tofu is crafted for dishes where a solid structure is essential. Ideal for grilling, stews, and much more.",
+        tags: "Grill, Stew, Structure",
+        slug: "extra-firm-tofu",
       },
       product2: {
         shortDescription: "Versatile and ideal for stir-fries and grilling.",
@@ -59,13 +59,13 @@ export default {
         slug: "firm-tofu",
       },
       product3: {
-        shortDescription: "A solid texture for dishes requiring structure.",
-        title: "Extra Firm Tofu",
-        subtitle: "Robust and Flavorful Texture",
+        shortDescription: "A delicate texture perfect for soups and desserts.",
+        title: "Soft Tofu",
+        subtitle: "Soft and Light Texture",
         description:
-          "Our Extra Firm Tofu is crafted for dishes where a solid structure is essential. Ideal for grilling, stews, and much more.",
-        tags: "Grill, Stew, Structure",
-        slug: "extra-firm-tofu",
+          "Our Soft Tofu is crafted to bring a delicate and delicious texture to your soups, desserts, and creative dishes. Made with superior quality ingredients.",
+        tags: "Soup, Dessert, Creative",
+        slug: "soft-tofu",
       },
       product4: {
         shortDescription:

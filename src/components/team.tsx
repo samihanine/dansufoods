@@ -19,13 +19,13 @@ export const Team = async () => {
       name: "Pierre Donaldson",
       role: t("team.roleMember2"),
       image: PierreImage,
-      linkedinUrl: "https://www.linkedin.com/in/dansu/",
+      linkedinUrl: "https://www.linkedin.com/in/pierre-donaldson-84b023b/",
     },
     {
-      name: "Jenn Zimmermannn",
+      name: "Jenn Zimmermann",
       role: t("team.roleMember3"),
       image: JenniferImage,
-      linkedinUrl: "https://www.linkedin.com/in/dansu/",
+      linkedinUrl: "https://www.linkedin.com/in/jennifer-zimmermann-7911842/",
     },
   ];
   return (
