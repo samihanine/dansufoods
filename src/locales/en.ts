@@ -36,6 +36,10 @@ export default {
       primarybutton: "Discover Our Products",
       secondarybutton: "Learn More",
     },
+    partners: {
+      title: "Other Brands",
+      subtitle: "Other brands in the Dansu family",
+    },
     products: {
       title: "Our Products",
       subtitle:

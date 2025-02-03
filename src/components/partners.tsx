@@ -1,18 +1,16 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/button";
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "@/components/carousel";
+import { useScopedI18n } from "@/locales/client";
 import { Container } from "./container";
 import { Typography } from "./typography";
-import Link from "next/link";
 
 const data = [
   {
@@ -34,8 +32,10 @@ const data = [
 
 export default function Partners() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [, setCanScrollPrev] = useState(false);
+  const [, setCanScrollNext] = useState(false);
+  const t = useScopedI18n("home");
+
   useEffect(() => {
     if (!carouselApi) {
       return;
@@ -54,11 +54,11 @@ export default function Partners() {
     <Container>
       <div className="mb-10">
         <Typography className="text-center" variant="h2">
-          Other Brands
+          {t("partners.title")}
         </Typography>
 
         <p className="text-sm text-center text-muted-foreground mt-3">
-          Discover other brands in the Dansu family
+          {t("partners.subtitle")}
         </p>
       </div>
       <div className="w-full">
@@ -97,14 +97,6 @@ export default function Partners() {
             ))}
           </CarouselContent>
         </Carousel>
-      </div>
-      <div className="mx-auto mt-10 w-fit">
-        <Link href="/products">
-          <Button>
-            View all products
-            <ArrowRight />
-          </Button>
-        </Link>
       </div>
     </Container>
   );
