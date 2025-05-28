@@ -15,7 +15,7 @@ import { Typography } from "./typography";
 const data = [
   {
     title: "Epik Eats",
-    className: "bg-red-200",
+    className: "bg-[#EA7CBC]",
     data: [
       {
         id: "item-4",
@@ -35,7 +35,7 @@ const data = [
     ],
   },
   {
-    title: "Tofutofu brand",
+    title: "Tofutofu",
     className: "bg-green-50",
     data: [
       {
@@ -148,7 +148,7 @@ export default function Partners() {
                         <img
                           src={item.image}
                           alt={section.title}
-                          className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                          className="absolute h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 h-full bg-[linear-gradient(hsl(var(--primary)/0.2),hsl(var(--primary)/0.8)_100%)] mix-blend-multiply" />
                       </div>
